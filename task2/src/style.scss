@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+html {
+  --dark: #272727;
+  --grey: #888888;
+  --light: #fff;
+  --blue: #0047FF;
+  --yellow: #FAFF00;
+}
+
+html[data-theme='dark'] {
+  --light: #272727;
+  --dark: #fff;
+  --grey: #D4D4D4;
+  --blue: #FAFF00;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  background-color: var(--light);
+
+}
+
+body {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  background-color: var(--dark);
+  width: 100vw;
+  height: 8vh;
+
+  button {
+    margin-left: 6vw;
+    font-size: 1.5rem;
+    background-color: var(--light);
+    color: var(--dark);
+    height: 8vh;
+    width: 10vw;
+    border: 0;
+    font-weight: bold;
+  }
+}
+.container {
+  @extend .flex;
+  @extend .center;
+  height: 92vh;
+  width: 100vw;
+}
+
+.card {
+  @extend .flex;
+  @extend .center;
+  flex-direction: column;
+  height: 70vh;
+  width: 40vw;
+  border-radius: 68px;
+  box-shadow: 0px 0px 15px 5px rgba(49, 49, 49, 0.116);
+  justify-content: space-between;
+  padding: 3%;
+
+  .normal {
+    background-color: var(--light);
+    color: var(--dark);
+    width: 55%;
+    height: 10%;
+    border-radius: 7px;
+    border: 1px solid var(--dark);
+
+    img {
+      width: 22px;
+      height: 22px;
+      margin-right: 5px;
+    }
+  }
+
+  p {
+    color: var(--dark);
+    width: 55%;
+    text-align: left;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    width: 40%;
+    text-align: center;
+    border-bottom: 1px solid var(--dark);
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+
+    span {
+      color: var(--grey);
+      font-size: 1rem;
+      font-weight: normal;
+      background: var(--light);
+      padding: 0 10px;
+    }
+  }
+
+  .googleSignIn {
+    flex-direction: row;
+    @extend .flex;
+    @extend .center;
+    font-size: 1rem;
+    font-family: "Montserrat";
+  }
+
+  .field {
+    @extend .flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--light);
+    width: 55%;
+    height: fit-content;
+    .passwordIn{
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      position: relative;
+      width: 103%;
+      height: 6vh;
+    }
+    input {
+      color: var(--grey);
+      background-color: var(--light);
+      width: 100%;
+      height: 6vh;
+      border-radius: 7px;
+      border: 1px solid var(--grey);
+    }
+    img{
+      width: 14px;
+      position: absolute;
+      padding-right: 5%;
+    }
+    label {
+      color: var(--grey);
+      font-size: 0.75rem;
+      font-family: "Montserrat";
+      // margin-bottom: 2%;
+    }
+  }
+
+  .options {
+    @extend .flex;
+    @extend .center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 55%;
+    margin-bottom: 3vh;
+    input {
+      border-radius: 4px;
+      border: 1px solid var(--grey);
+      box-sizing: border-box;
+    }
+
+    div {
+      justify-content: start;
+      width: 50%;
+      height: 100%;
+      @extend .flex;
+      @extend .center;
+      flex-direction: row;
+
+      label {
+        color: var(--grey);
+        margin-left: 2%;
+        font-size: 0.875rem;
+        font-family: "Montserrat";
+        clear: both;
+        display: inline-block;
+       overflow: hidden;
+       white-space: nowrap;
+      }
+
+    }
+
+    a {
+      font-size: 0.875rem;
+      font-family: "Montserrat";
+      text-decoration: none;
+      color: var(--blue);
+      clear: both;
+        display: inline-block;
+       overflow: hidden;
+       white-space: nowrap;
+    }
+  }
+
+  .inverse {
+    background-color: var(--dark);
+    color: var(--light);
+    width: 55%;
+    height: 10%;
+    border-radius: 7px;
+    border: 1px solid var(--dark);
+    font-size: 1rem;
+    font-family: "Montserrat";
+  }
+
+  .signUp {
+    @extend .flex;
+    @extend .center;
+    flex-direction: row;
+    color: var(--grey);
+    font-family: "Montserrat";
+    font-size: 0.75rem;
+
+    label {
+      white-space: nowrap;
+      color: var(--grey);
+    }
+
+    a {
+      margin-left: 2%;
+      text-decoration: underline;
+      color: var(--dark);
+      font-family: "Montserrat";
+      font-size: 0.75rem;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    display: flex;
+
+    align-items: center;
+  justify-content: center;
+  height: 6vh;
+    button {
+      margin: 0px;
+      font-size: 0.938rem;
+      width: 50vw;
+      height: 100%;
+
+    }
+  }
+  .card{
+    width: 100vw;
+    box-shadow: 0px 0px 0px 0px;
+    p{
+      font-family: "Robot";
+      width: fit-content;
+      font-size: 1.5rem;
+      clear: both;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  .normal{
+    width: 90vw;
+  }
+  .field{
+    width: 90vw;
+    
+  }
+  .options{
+    div{
+      label{
+        width: fit-content;
+        font-size: 0.75rem;
+        clear: both;
+        display: inline-block;
+       overflow: hidden;
+       white-space: nowrap;
+      }
+    }
+    a{
+      width: fit-content;
+      font-size: 0.75rem;
+      clear: both;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}
